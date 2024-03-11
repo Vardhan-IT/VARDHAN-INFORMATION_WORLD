@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            login.com 
+        </title>
+        <style>
+            body{
+                background-color: black;
+            }
+            .logo{
+                width: 100px;
+                height: 100px;
+            }
+            .main{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-top: 50px;
+                row-gap: 20px;
+                border-style: bold;
+                border-width:2px;
+                border-color: black;
+            }
+            button {
+    width:180px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.input{
+    padding: 5px;
+}
+.para{
+    color: #fff;
+}
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <img class=logo src="../logo/v logo.avif">
+            <p class="para">V-information_World account</p>
+            <p class="para">LOGIN</p>
+            <input class="input" type="text" id="textInput" placeholder="USERNAME">
+            <input class="input" type="password" id="password" placeholder="PASSWORD">
+            <button onclick="login();">LOGIN</button>
+        </div>
+        <script>
+            function getusers(){                                   
+                return JSON.parse(localStorage.getItem(`users`));
+            }
+          function saveusers(users)
+          {
+            localStorage.setItem(`users`,JSON.stringify(`users`));
+          }
+         let  users=[];
+    function login() {
+      let username = document.getElementById('textInput').value;
+      let  password = document.getElementById(`password`).value;
+       let users = getusers();
+       let user = users.find(user => user.username === username && user.password === password);{
+        if(user)
+        {
+            alert(`login succesful`);
+      }
+       else {
+        alert('invalid username or password');
+      }
+}
+    } 
+    </script>
+    </body>
+</html>

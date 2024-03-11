@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN-UP</title>
+    <style>
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+        body{
+            background-color: black;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            padding-top: 100px;
+            row-gap: 20px;
+            border-style: bold;
+            border-width: 2px;
+            border-color: white;
+            align-items: center;
+            justify-content: center;
+           
+        }
+
+        button {
+            width: 180px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .bottom{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            
+        }
+        .para ,.para1{
+            font-weight:bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .para{
+            margin-top: -10;
+        }
+        .links{
+            display: flex;
+            flex-direction: row;
+            column-gap: 10px;
+             color: #fff;
+            justify-content: space-between;
+        }
+        .input{
+            padding: 5px;
+        }
+        .login{
+            color:white;
+        }
+        .delete{
+           color:white;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <img class="logo" src="../logo/v logo.avif">
+    <p class="para1">V-information_World account</p>
+    <div id="signup" class="bottom">
+        <p class="para">SIGN UP</p>
+        <input class="input"  type="text" id="signup-username" placeholder="Username">
+        <input class="input" type="password" id="signup-password" placeholder="Password">
+        <button onclick="signUp()">Sign Up</button>
+        <div class="links">
+        <a href="http://127.0.0.1:5500/my%20website/Vit.html/login.html" target="_blank"><span class="login">LOGIN</span></a>
+        <A href="http://127.0.0.1:5500/my%20website/Vit.html/delete.html" target="_blank"><span class="delete">DELETE</span></A>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getusers() {
+        let users = localStorage.getItem('users');
+        return users ? JSON.parse(users) : [];
+    }
+
+    function saveusers(users) {
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+
+    function signUp() {
+        let username = document.getElementById('signup-username').value;
+        let password = document.getElementById('signup-password').value;
+
+        if (username.trim() === '' || password.trim() === '') {
+            alert('Username and password cannot be empty');
+            return;
+        }
+
+        let existingUsers = getusers();
+        if (!Array.isArray(existingUsers)) {
+            existingUsers = [];
+        }
+
+        let userExists = existingUsers.some(user => user.username === username);
+        if (userExists) {
+            alert('Username already exists');
+            return;
+        }
+
+        let newUser = {
+            username: username,
+            password: password
+        };
+        existingUsers.push(newUser);
+        saveusers(existingUsers);
+        alert('Sign up successful. Please log in.');
+        document.getElementById('signup').style.display = 'none';
+        console.log(users);
+       
+    }
+</script>
+  
+</body>
+</html>

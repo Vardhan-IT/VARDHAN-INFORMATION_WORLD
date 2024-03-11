@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete the account</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 50px;
+            row-gap: 20px;
+            border-style: bold;
+            border-width: 2px;
+            border-color: black;
+        }
+
+        button {
+            width: 180px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .para{
+            color: #fff;
+        }
+        .input{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <img class="logo" src="../logo/v logo.avif">
+    <p class="para">V-information_World account</p>
+    <p class="para">DELETE-A-ACCOUNT</p>
+    <input class="input" type="text" id="signup-username" placeholder="USERNAME">
+    <input class="input" type="password" id="signup-password" placeholder="PASSWORD">
+    <button onclick="deleteAccount()" class="button">DELETE</button>
+</div>
+<script>
+    function getusers() {
+        let users = localStorage.getItem('users');
+        return users ? JSON.parse(users) : [];
+    }
+
+    function saveusers(users) {
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+
+    function deleteAccount() {
+        let username = document.getElementById('signup-username').value;
+        let password = document.getElementById('signup-password').value;
+        console.log('Username:', username);
+        console.log('Password:', password);
+        let users = getusers();
+        console.log('Users:', users);
+        
+        // Ensure users is an array
+        if (!Array.isArray(users)) {
+            users = [];
+        }
+        
+        let index = users.findIndex(user => user.username === username && user.password === password);
+        console.log('Index:', index);
+        if (index !== -1) {
+            users.splice(index, 1);
+            saveusers(users);
+            alert(`The account has been deleted`);
+        } else {
+            alert('Invalid username or password');
+        }
+    }
+</script>
+</body>
+</html>

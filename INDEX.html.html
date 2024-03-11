@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            V-INFORMATION_WORLD
+        </title>
+        <style>
+          body{
+            background-color: black;
+          }
+          .main{
+            display: flex;
+            flex-direction: column;
+            row-gap: 30PX;
+            align-items: start;
+          }
+          .header{
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    } 
+            .logo{
+                width:70px;
+                height:70px;
+               position: absolute;
+               top:15px;
+                
+            }
+            .movie-logo{
+             width:200px;
+             height: 80px;   
+            }
+            .letters{
+                font-family: Anta;
+                color:white;
+                position: absolute;
+                top: 46px;
+                left: 70px;
+            }
+    .header-left{
+        display: flex;
+        flex: 1;
+    }        
+    .header-middle{
+        display: flex;
+        flex-direction: row;
+        flex:1;
+        background-color: black;
+    }
+            .search-bar{
+                height:40px;
+                font-size: 30px;
+                border-radius: 20px;
+                display: flex;
+                flex:1;
+                width: 30px;
+                
+            }
+            .search-bar::placeholder{
+                padding-left:30px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+    .header-right{
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        
+    }   
+    .header-right{
+        width:40px;
+        height: 40px;
+        display: flex;
+        flex-shrink: none;
+        align-items:center;
+        justify-content: end;
+        border-radius: 20px;
+      color:red;
+    } 
+    .v-news{
+        width: 100px;
+        height:50px;
+        display: flex;
+        align-items: center;
+        padding-left: 35px;
+        text-decoration:none ;
+    }
+    .youtube{
+        width: 100px;
+        height:50px;
+        display: flex;
+        align-items: center;
+        padding-left: 35px;
+        text-decoration:none ;
+    }
+    .v-movies{
+        width: 100px;
+        height:50px;
+        display: flex;
+        align-items: center;
+        padding-left: 35px;
+        text-decoration:none ;
+    }
+    .v-news1{
+        color: white;
+        font-weight:bolder;
+    }
+    .news-button{
+        background-image:repeating-radial-gradient( white 30%, black 15%);
+    }
+    .youtube1{
+        color: white;
+        font-weight:bolder;
+    }
+    .v-movies1{
+        color: white;
+        font-weight:bolder;
+    }
+    .youtube-button{
+        background-image:repeating-radial-gradient( white 30%, black 15%);
+    }
+    .v-movies-button{
+        background-image:repeating-radial-gradient( white 30%, black 15%);
+    }
+    .sign-in{
+        width:50px;
+        height:50px;
+        border-radius: 25px;
+        border-color: grey;
+        background-color: black;
+        color: white;
+    }
+        </style>
+    </head> 
+    <body>
+      <div class="header">
+        <div class="header-left">
+            <img class=logo src="../logo/v logo.avif"><span class="letters">V-INFORMATION_WORLD</span>
+        </div>
+        <div class="header-middle">
+            <input class="search-bar" type="text" placeholder="search">
+        </div>
+        <div class="header-right">
+            <a href="http://127.0.0.1:5500/my%20website/Vit.html/SIGN-UP.html" target="_blank"><button class="sign-in">SIGN IN</button></a>
+        </div>
+    </div>
+    <div class="main">
+      <a class="v-news" href="http://127.0.0.1:5500/my%20website/Vit.html/V-news.html" target="_blank"><button class="news-button"><span class="v-news1">V-NEWS</span></a></button>
+     <a class="youtube" href="https://www.youtube.com/" target="_blank"><button class="youtube-button"><span class="youtube1" >YOUTUBE</span></a></button>
+     <a class="v-movies" href="http://127.0.0.1:5500/my%20website/Vit.html/V-Movies.html" target="_blank" ><button class="v-movies-button"><span class="v-movies1">V-MOVIES</span></a></button>
+    </div> 
+</body>
+</html>

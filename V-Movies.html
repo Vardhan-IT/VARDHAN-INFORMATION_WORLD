@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            MOVIE-TIME
+        </title>
+        <meta name="MOVIE-TIME" content="width=device-width, initial-scale=1.0"/>
+        <style> body{
+          background-color: black;
+        }
+        p{
+            color: white;
+        }
+        .main{
+         
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 20px;
+        }
+        .main2{
+            display: grid;
+           grid-template-columns: 330px 330px 330px;
+        
+        }
+        .thumbnail{
+            position: absolute;
+            z-index: 200;
+            display: grid;
+            width: 300px;
+            height: 200px;
+           object-fit: cover;
+        }
+        .thumbnail:hover{
+            z-index: -1000;
+            width: 0;
+            height: 0;
+        }
+        .webpage{
+            display: grid;
+            grid-template-columns:  1fr 1fr;
+            column-gap: 20px;
+        } 
+        @media only screen and (min-width: 1000px) {
+        .webpage{
+                grid-template-columns:1fr 1fr 1fr;
+        }
+                
+            }
+        @media only screen and(max-width: 500px) {
+            .webpage{
+                grid-template-columns: 1fr;
+            }
+        }    
+            @media only screen and (max-width: 600px) {  
+                body {  
+                    background-color:green;  
+                }  
+            } 
+    .header{
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    } 
+            .logo{
+                width:70px;
+                height:70px;
+               position: absolute;
+               top:15px;
+            }
+            .movie-logo{
+             width:200px;
+             height: 80px;   
+            }
+            .letters{
+                font-family: Anta;
+                color:white;
+                position: absolute;
+                top: 46px;
+                left: 70px;
+            }
+    .header-left{
+        display: flex;
+        flex: 1;
+    }        
+    .header-middle{
+        display: flex;
+        flex-direction: row;
+        flex:1;
+    }
+            .search-bar{
+                height:40px;
+                font-size: 30px;
+                border-radius: 20px;
+                display: flex;
+                flex:1;
+                width: 30px;
+                padding-right:50px;
+            }
+            .search-bar::placeholder{
+                padding-left:30px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+    .header-right{
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        position: relative;
+    }   
+    .header-right-id{
+        width:40px;
+        height: 40px;
+        display: flex;
+        flex-shrink: none;
+        align-items:center;
+        margin-left: 350px;
+        border-radius: 20px;
+        background-color: white;
+    }     
+    .acc-use{
+        position: absolute;
+        top: 50px;
+        right:50px;
+        z-index: 2000;
+       color: black;
+    }
+    .header-right-scroll{
+        color: black;
+    }
+    .sign-up-link{
+        font-size: 10px;
+        font-weight:bold;
+    }
+     </style>
+    </head> 
+    <body>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+        <div class="header">
+            <div class="header-left">
+                <img class=logo src="../logo/v logo.avif"><span class="letters">MOVIES</span><img class="movie-logo" src="../logo/MOVIES.jpg">
+            </div>
+            <div class="header-middle">
+                <input onkeypress="
+                search();"  id="search"   class="search-bar" type="text" placeholder="search">
+            </div>
+            <div class="header-right">
+               <button class="header-right-id" id="header-right-id" >
+                <a class="sign-up-link" href="http://127.0.0.1:5500/my%20website/Vit.html/SIGN-UP.html">SIGN-UP</a>
+            </button>
+            <div class="header-right-scroll" id="header-right-scroll">
+            </div>
+            </div>
+        </div>
+        <marquee direction="right">IT'S MOVIE-TIME</marquee>
+        <div class="webpage">
+</div>
+<script src="vyoutube.js"></script>
+<script src="myyoutube.js">
+</script>
+    <script>
+        let thumbnailvalue=document.querySelector(`.thumbnail`).value;
+        console.log(thumbnailvalue);
+    function search(){
+    let searchvalue = document.getElementById(`search`).value;
+    let found = false;
+    videos.forEach(() => {
+            if(searchvalue === videos.name)
+            {
+                found = true;
+                 videos.addEventListener(`click`,() => {
+                    videos.video;
+                 })
+            }
+    });
+    alert('the movie name is not found');
+    console.log(searchvalue);
+    }
+</script>
+    </body>
+</html>
